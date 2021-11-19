@@ -1,0 +1,41 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static './style.css' %}"/>
+
+<body>
+<div>
+    <header class="header">
+        <h1 class="header-title">Covid-19 Information</h1>
+        <section class="admin">
+        <a class="admin-anchor" href="{% url 'admin:index' %}">
+            <button class="admin-button">Administrator</button>
+        </a>
+    </section>
+    </header>
+
+    {% if cases_list %}
+    <table class="cases-table">
+        <thead>
+        <tr>
+            <th>Country</th>
+            <th>Confirmed Cases</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for case in cases_list %}
+        <tr>
+            <td>{{ case.country.country_name }}</td>
+            <td class="cases">{{ case.confirmed}}</td>
+            <td class="deaths">{{ case.deaths }}</td>
+            <td class="recoveries">{{ case.recovered }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No cases.</p>
+    {% endif %}
+</div>
+</body>
