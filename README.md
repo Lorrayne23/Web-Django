@@ -1,6 +1,6 @@
 
 ### Web Django Covid-19 Information
-This work is small panel system  in table format  that shows  COVID-19 infection of countries, with the following fields:
+This work is a small panel system  in table format  that shows  COVID-19 infection of countries, with the following fields:
 
 
 | Field | Format | 
